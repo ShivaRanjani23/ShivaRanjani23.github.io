@@ -6,13 +6,15 @@
     <title>index</title>
     <script>
         function greet(){
-            alert("Textbox1+Textbox2");
+            let a = Number(textbox1.value);
+            let b = Number(textbox2.value);
+            alert(a+b);
         }
     </script>
 </head>
 <body>
     <input type="text" id = "textbox1">
     <input type="text" id = "textbox2">
-    <button onclick greet() style="color: blue;"> </button>
+    <button onclick="greet()" style="background-color: aqua;">Click </button>
 </body>
 </html>
