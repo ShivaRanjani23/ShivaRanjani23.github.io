@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calc(){
+            let a = Number(document.getElementById("t1").value);
+            let b = Number(document.getElementById("t2").value);
+            let sum = a + b;
+            let mult = a * b;
+            let diff = a - b;
+            let div = a / b;
+            document.getElementById("resultSum").innerText = "Sum: " + sum;
+            document.getElementById("resultMult").innerText = "Multiplication: " + mult;
+            document.getElementById("resultDiff").innerText = "Difference: " + diff;
+            document.getElementById("resultDiv").innerText = "Division: " + div;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="t1" />
+    <input type="text" id="t2" />
+    <button onclick="calc()" style="background-color:blueviolet">Calculate</button>
+    <hr/>
+    <p id="resultSum"></p>
+    <p id="resultMult"></p>
+    <p id="resultDiff"></p>
+    <p id="resultDiv"></p>
+    
+</body>
+</html>
