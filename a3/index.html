@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>Document</title>
     <script>
         function greet(){
-            let a = Number(textbox1.value);
-            let b = Number(textbox2.value);
-            alert(a+b);
+            alert(txtName.value);
+        }
+        function calc(){
+            let a = Number(t1.value);
+            let b = Number(t2.value);
+            let sum= a + b;
+            document.getElementById("result").innerText = "Sum: " + sum;
         }
     </script>
 </head>
 <body>
-    <input type="text" id = "textbox1">
-    <input type="text" id = "textbox2">
-    <button onclick="greet()" style="background-color: aqua;">Click </button>
+    <input type "text " id = "txtName" />
+    <button onclick="greet()" style=background-color:blueviolet >Click </button>
+    <hr/>
+    <input type "text " id = "t1" />
+    <input type "text " id = "t2" />
+    <button onclick="calc()" style=background-color:blueviolet >Submit</button>
+    <hr/>
+    <p id="result"></p>
+
 </body>
 </html>
