@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculator</title>
     <script>
-        function calc(){
-            let a = Number(document.getElementById("t1").value);
-            let b = Number(document.getElementById("t2").value);
-            let sum = a + b;
-            let mult = a * b;
-            let diff = a - b;
-            let div = a / b;
-            document.getElementById("resultSum").innerText = "Sum: " + sum;
-            document.getElementById("resultMult").innerText = "Multiplication: " + mult;
-            document.getElementById("resultDiff").innerText = "Difference: " + diff;
-            document.getElementById("resultDiv").innerText = "Division: " + div;
+        function add(a, b) {
+            return a + b;
+        }
+        function subtract(a, b) {
+            return a - b;
+        }
+        function multiply(a, b) {
+            return a * b;
+        }
+        function divide(a, b) {
+            return b !== 0 ? a / b : 'Infinity';
+        }
+        function calc() {
+            const num1 = Number(document.getElementById('input1').value);
+            const num2 = Number(document.getElementById('input2').value);
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 
+                num1 + " + " + num2 + " = " + add(num1, num2) + "<br>" +
+                num1 + " - " + num2 + " = " + subtract(num1, num2) + "<br>" +
+                num1 + " * " + num2 + " = " + multiply(num1, num2) + "<br>" +
+                num1 + " / " + num2 + " = " + divide(num1, num2);
         }
     </script>
 </head>
 <body>
-    <input type="text" id="t1" />
-    <input type="text" id="t2" />
+    <input type="text" id="input1" />
+    <input type="text" id="input2" />
     <button onclick="calc()" style="background-color:blueviolet">Calculate</button>
-    <hr/>
-    <p id="resultSum"></p>
-    <p id="resultMult"></p>
-    <p id="resultDiff"></p>
-    <p id="resultDiv"></p>
-    
+    <hr />
+    <div id="result"></div>
 </body>
 </html>
