@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Information Form</title>
+    <script>
+        function submitInfo() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 
+                "Name: " + name + "<br>" +
+                "Email: " + email + "<br>" +
+                "Password: " + password;
+        }
+    </script>
+</head>
+<body>
+    <label for="name">Name:</label>
+    <input type="text" id="name" /><br/><br/>
+    <label for="email">Email:</label>
+    <input type="email" id="email" /><br/><br/>
+    <label for="password">Password:</label>
+    <input type="password" id="password" /><br/><br/>
+    <button onclick="submitInfo()" style="background-color:blueviolet">Submit</button>
+    <hr />
+    <div id="result"></div>
+</body>
+</html>
