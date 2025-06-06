@@ -49,7 +49,6 @@ const showWelcome = (email) => {
     let str=`
     <div class='App-Container'>
     <h1>Welcome</h1>
-    <p>Welcome!</p>
     </div>
     `
     root.innerHTML = str
