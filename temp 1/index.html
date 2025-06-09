@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    <script>
+      //  x=10;
+      //  console.log(x);
+     // var x;
+  //objects and arrays 
+   // const fruits = ["Apple","Mango","Orange"]  
+   // console.log(fruits[0]) //prints first element of the array
+   // fruits.push("banana")
+   // console.log(fruits) //prints the array with the new element
+   // fruits.pop("banana")
+    //console.log(fruits)//removes the element from the array
+    //for(let i = 0;i < fruits.length;i++){
+     //console.log(fruits[i]);
+    //}
+    //fruits.forEach((fruit)=>console.log(fruit));
+    //const newArr = fruits.map((value)=>value); //prints in the array format
+    //console.log(newArr) //prints in array format
+    //const newArr2 = fruits.filter((fruit)=>fruit=="apple"); //prints in the array format
+    //console.log(newArr2)
+    //const newArr3 = fruits.find((fruit)=>fruit=="apple"); //prints in the array format
+    //console.log(newArr3)
+    //const score = [4,2,1,6,7];// we want to print the 5 elements with id before it
+    //score.map((element)=>console.log("ID00"+element));
+    const add = (...args) => {
+        const total = args.reduce((sum,e) => sum + e);
+        return total;
+      };
+      const result = add(4, 6, 7, 9, 3);
+      console.log(result);
+    </script>
+    
+</body>
+</html>

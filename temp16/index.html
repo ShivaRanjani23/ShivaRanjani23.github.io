@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="emailInput" placeholder="Enter email to search" />
+    <button id="searchBtn">Search</button>
+    <div id="dvUsers"></div>
+    <div id="searchResult"></div>
+    <script>
+      const url = "https://jsonplaceholder.typicode.com/users";
+      let usersData = [];
+      let str = "<div>";
+      fetch(url)
+        .then((res) => res.json())
+        .then((users) => {
+          usersData = users;
+          users.map((user) => {
+            str += `<div>${user.name}</div>`;
+          });
+
+          dvUsers.innerHTML = str + "</div>";
+        });
+
+      document.getElementById("searchBtn").addEventListener("click", () => {
+        const email = document.getElementById("emailInput").value.trim();
+        const resultDiv = document.getElementById("searchResult");
+        const usersDiv = document.getElementById("dvUsers");
+        if (!email) {
+          resultDiv.innerHTML = "<div>Please enter an email address.</div>";
+          return;
+        }
+        const user = usersData.find((u) => u.email.toLowerCase() === email.toLowerCase());
+        if (user) {
+          resultDiv.innerHTML = `<div>Name: ${user.name}</div>`;
+          usersDiv.innerHTML = ""; // Hide other names
+        } else {
+          resultDiv.innerHTML = "<div>No user found with that email.</div>";
+          usersDiv.innerHTML = ""; // Hide other names
+        }
+      });
+    </script>
+  </body>
+</html>
